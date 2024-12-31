@@ -11,12 +11,12 @@ body {
 }
 
 .container {
+  --color: #1e1e1e;
   align-items: center;
-  background-color: #1e1e1e;
-  color: #1e1e1e;
+  background-color: var(--color);
+  color: var(--color);
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 .contents {
@@ -30,16 +30,17 @@ body {
 }
 
 .stalker {
+  --size: 240px;
   pointer-events: none;
   position: fixed;
-  width: 240px;
-  height: 240px;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
-  transition: transform 50ms ease-out;
-  mix-blend-mode: screen;
-  top: -120px;
-  left: -120px;
+  top: calc(-1 * var(--size) / 2);
+  left: calc(-1 * var(--size) / 2);
   background: rgb(255 255 255 / 0.5);
+  mix-blend-mode: screen;
+  transition: transform 50ms ease-out;
 }
 
 .stalker.background {
